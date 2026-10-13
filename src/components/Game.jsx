@@ -5,6 +5,10 @@ export default function Game() {
 
     const [gameData, setGameData] = useState({})
 
+    const handlewin = () => {
+        console.log('handleWin start');
+    }
+
     useEffect(()=> {
         // useEffevt callback az Nem lehet async !!!
         // TODO - nase url?
@@ -21,6 +25,6 @@ export default function Game() {
 
     return <div>
         {/* <p>TODO - comment out this! - gameData json: {JSON.stringify(gameData)}</p> */}
-        <Board>{gameData}</Board>
+        <Board onWin={handlewin} >{gameData}</Board>
     </div>
 }

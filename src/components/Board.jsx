@@ -2,7 +2,7 @@ import Tile from "./Tile";
 import './Board.css'
 import { useEffect, useState } from "react";
 
-export default function Board({children = {} }) {
+export default function Board({children = {}, onWin }) {
 
     //console.log('Board props obj: ', props)
     //console.log('Board children', children)
@@ -47,7 +47,7 @@ export default function Board({children = {} }) {
 
         if (!numbersDiff) {
             console.log('Gamer has won! :D')
-            
+            onWin()
         }
     }
     
