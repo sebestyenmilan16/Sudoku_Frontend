@@ -24,7 +24,7 @@ export default function Game() {
     useEffect(()=> {
         // useEffevt callback az Nem lehet async !!!
         // TODO - nase url?
-        fetch(`http://localhost:8080/sudoku`)
+        fetch(`/api/sudoku`)
         .then( async (json)=> {
             console.log('json', json)
             const data = await json.json()
