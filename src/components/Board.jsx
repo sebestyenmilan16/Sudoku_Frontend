@@ -5,7 +5,7 @@ export default function Board({children = {} }) {
 
     //console.log('Board props obj: ', props)
     //console.log('Board children', children)
-    const {puzzle, solution} = children
+    const {puzzle = [], solution = []} = children
     console.log('Puzzle: ', puzzle);
     console.log('Solution: ', solution);
     
@@ -14,27 +14,9 @@ export default function Board({children = {} }) {
 
     return <div className="board">
 
-        <div className="row">
-        <Tile />
-        <Tile value={5} />
-        <Tile value={null} />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        </div>
-        <div className="row">
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        </div>
+        {puzzle.map( (row, rowIdx)=><div className="row" key={rowIdx}>
+            {row.map( (value, colIdx)=> <Tile key={colIdx} value={value} /> )}
+        </div>)}
+        
     </div>
 }
