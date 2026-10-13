@@ -45,7 +45,7 @@ export default function Board({children = {}, onWin }) {
 
         console.log('PuzzleNulls', puzzleNulls)
 
-        if (!numbersDiff) {
+        if (!numbersDiff && matches == puzzleNulls) {
             console.log('Gamer has won! :D')
             onWin()
         }

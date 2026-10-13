@@ -51,6 +51,6 @@ export default function Game() {
             theme="colored"
             
         />
-        <button onClick={handleWin}>TODO</button>
+        {/*<button onClick={handleWin}>TODO</button>*/}
     </div>
 }
