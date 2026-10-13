@@ -10,9 +10,18 @@ export default function Board({children = {} }) {
     console.log('Puzzle: ', puzzle);
     console.log('Solution: ', solution);
     
-    const [currentBoard, setCurrentBoard] = useState([[]])
+    const [currentBoard, setCurrentBoard] = useState(Array.from({length: 9}, (val, key) => []))
     const handleTileValueChange = (newNumber, rowIdx, colIdx) => {
         // TODO
+        console.log('handleTileValueChange newNumber, rowIdx, colIdx', newNumber, rowIdx, colIdx)
+        ///puzzle[rowIdx][colIdx] = newNumber
+
+        setCurrentBoard( (prev)=> {
+            const newBoard = prev.slice()
+            newBoard[rowIdx][colIdx] = newNumber
+            return newBoard
+        })
+
     }
     
 
